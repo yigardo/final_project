@@ -1,6 +1,7 @@
 from selenium.webdriver.remote.webelement import WebElement
 
-from test_cases.conftest import action
+import test_cases.conftest as conf
+
 
 
 class UiActions:
@@ -14,15 +15,15 @@ class UiActions:
 
     @staticmethod
     def mouse_hover(elem1: WebElement, elem2: WebElement):
-        action.move_to_element(elem1).move_to_element(elem2).clikc().perform()
+        conf.action.move_to_element(elem1).move_to_element(elem2).click().perform()
 
     @staticmethod
     def right_click(elem: WebElement):
-        action.context_clikc(elem).perform()
+        conf.action.context_clikc(elem).perform()
 
     @staticmethod
     def drag_and_drop(elem1: WebElement, elem2: WebElement):
-        action.drag_and_drop(elem1, elem2).perform()
+         conf.action.drag_and_drop(elem1, elem2).perform()
 
     @staticmethod
     def clear(elem: WebElement):

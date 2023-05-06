@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Environment>
+    <WaitTime>2</WaitTime>
+    <Browser>Chrome</Browser>
+    <Url>http://localhost:3000/</Url>
+    <UserName>admin</UserName>
+    <Password>admin</Password>
+
+
+
+</Environment>

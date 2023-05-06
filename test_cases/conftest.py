@@ -9,10 +9,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
+from utilities.common_ops import get_data
 from utilities.manage_pages import ManagerPages
 
 driver = None
-web_driver = "Chrome"
+#web_driver = "Chrome"
 action = None
 
 @pytest.fixture(scope="class")
@@ -20,8 +21,8 @@ def init_web_driver(request):
     globals()["driver"] = get_web_driver()
     driver = globals()["driver"]
     driver.maximize_window()
-    driver.implicitly_wait(5)
-    driver.get("http://localhost:3000/")
+    driver.implicitly_wait(int(get_data('WaitTime')))
+    driver.get(get_data("Url"))
     request.cls.driver = driver
     globals()['action'] = ActionChains(driver)
     ManagerPages.init_web_pages()
@@ -30,6 +31,7 @@ def init_web_driver(request):
     driver.quit()
 
 def get_web_driver():
+    web_driver = get_data("Browser")
     if web_driver.lower() == "chrome":
       driver = get_chrome()
     elif web_driver.lower() == "firefox":

@@ -2,8 +2,8 @@ from selenium.webdriver.common.by import By
 
 user_name = (By.NAME,'user')
 password = (By.ID,'current-password')
-submit = (By.CSS_SELECTOR,'button["aria-label=Login button"]')
-skip = (By.CSS_SELECTOR,'button["aria-label=Skip change password button"]')
+submit = (By.CSS_SELECTOR,'button[aria-label="Login button"]')
+skip = (By.CSS_SELECTOR,'button[aria-label="Skip change password button"]')
 
 class LoginPage:
 
