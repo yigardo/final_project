@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 search = (By.CSS_SELECTOR, 'input[class="css-fcoerl-input-input"]')
 new_user = (By.CSS_SELECTOR, 'a[href="admin/users/create"]')
-users_list = (By.XPATH, '//table[@class="filter-table form-inline filter-table--hover"]/tbody/tr')
+users_list = (By.XPATH, '//table/tbody/tr/td/a/img')
 user_by_user_name = (By.CSS_SELECTOR, "a[title='kuku']")
 delete = (By.XPATH, '//div/button[@class="css-19vct9a-button"]')
 confirm_delete = (By.CSS_SELECTOR, 'button[aria-label="Confirm Modal Danger Button"]')

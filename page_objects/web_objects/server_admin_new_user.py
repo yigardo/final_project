@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 name = (By.ID, 'name-input')
 email = (By.ID, 'email-input')
-user_name = (By.ID, 'name-input')
+user_name = (By.ID, 'username-input')
 password = (By.ID, 'password-input')
 create_user = (By.CSS_SELECTOR, 'button[type="submit"]')
 

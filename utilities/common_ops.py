@@ -1,4 +1,5 @@
 import csv
+import time
 
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
@@ -19,19 +20,25 @@ def wait(for_element, elem):
     elif for_element == 'element_displayed':
         WebDriverWait(conf.driver, int(get_data('WaitTime'))).until(EC.visibility_of_element_located((elem[0], elem[1])))
 
-    def read_csv(file_name):
-        data = []
-        with open(file_name, newline='') as file:
-            reader = csv.reader(file)
-            for row in reader:
-                data.insert(len(data), row)
-            return data
+def read_csv(file_name):
+    data = []
+    with open(file_name, newline='') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            data.insert(len(data), row)
+        return data
+
+
+def get_time_stamp():
+    return time.time()
 
 
 class For:
     ELEMENT_EXISTS = 'element_exists'
     ELEMENT_DISPLAYED = 'element_displayed'
 
+
 class By:
     USER = 'user'
     INDEX = 'index'
+
